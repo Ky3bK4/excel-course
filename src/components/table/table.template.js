@@ -43,7 +43,6 @@ export function createTable(rowsCount = 15) {
     .join('')
 
  
-
   rows.push(createRow('', cols))
   for ( let i = 0; i < rowsCount; i++) {
     const cells = new Array(colsCount)
@@ -53,7 +52,5 @@ export function createTable(rowsCount = 15) {
     rows.push(createRow(i+1, cells))
   }
   
-  console.log(rows);
-
   return rows.join('')
 }
