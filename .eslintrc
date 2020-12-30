@@ -11,7 +11,13 @@
     "linebreak-style": ["error", "windows"],
     "require-jsdoc": "off",
     "comma-dangle": "off",
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "object-curly-spacing" : "off",
+    "eol-last": "off",
+    "no-trailing-spaces": "off",
+    "operator-linebreak": "off",
+    "no-debugger": "off",
+    "no-unused-vars":"off"
   },
   "extends": [
     "eslint:recommended", "google"

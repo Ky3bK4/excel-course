@@ -15,7 +15,8 @@ function jsLoaders() {
     {
       loader: 'babel-loader',
       options: {
-        presets: ['@babel/preset-env']
+        presets: ['@babel/preset-env'],
+        plugins: ['@babel/plugin-proposal-class-properties']
       }
     }
   ]
@@ -34,7 +35,6 @@ module.exports = {
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
-    // publicPath: 'dist'
   },
   target: 'web',
   resolve: {
@@ -46,12 +46,9 @@ module.exports = {
   },
   devtool: isDev ? 'source-map' : false,
   devServer: {
-    // historyApiFallback: true,
-    // contentBase: path.join(__dirname, 'dist'),
     open: true,
-    // compress: true,
     hot: isDev,
-    port: 8080,
+    port: 8000,
   },
   plugins: [
     new CleanWebpackPlugin(),
