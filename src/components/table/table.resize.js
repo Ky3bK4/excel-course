@@ -9,16 +9,19 @@ export default function resizeHandler($root, event) {
   const Rcoords = $resizer.getCoords()
   const index = $parent.data.col
   const cells = $root.findAll(`[data-col="${index}"]`)
- 
+
   if (type === 'col') {
     const resizerStartPos = window.getComputedStyle($resizer.$el).right;
     document.onmousemove = e => {
       const Rdelta = e.pageX - Rcoords.left
       $resizer.css({right: -Rdelta + 'px'})
+
       document.onmouseup = e => {
         const delta = e.pageX - coords.right
         const value = coords.width + delta
+
         window.getSelection().removeAllRanges()
+
         cells.forEach(cell => $(cell).css({width: value + 'px'}))
         $resizer.css({right: resizerStartPos})
 
